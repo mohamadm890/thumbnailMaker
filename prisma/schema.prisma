@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum CreditType {
+  ADD
+  DEDUCT
+  REFUND
+}
+
+
+model User {
+  id        String   @id @default(cuid())
+  clerkId   String   @unique
+  email     String @unique
+  credits   Int      @default(1)
+  plan      String   @default("free")
+
+  thumbnails   Thumbnail[]
+  transactions CreditTransaction[]
+
+  createdAt DateTime @default(now())
+}
+
+model Thumbnail {
+  id        String   @id @default(cuid())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  prompt    String
+  imageUrl  String
+
+  createdAt DateTime @default(now())
+}
+
+model CreditTransaction {
+  id        String   @id @default(cuid())
+
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+
+  type      CreditType   // ADD | DEDUCT | REFUND
+  amount    Int
+
+  createdAt DateTime @default(now())
+}

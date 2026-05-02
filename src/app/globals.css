@@ -1,26 +1,29 @@
 @import "tailwindcss";
 
+@theme {
+  /* This maps the CSS variables from Next.js to Tailwind utility classes */
+  --font-sora: var(--font-sora);
+  --font-inter: var(--font-inter);
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Global Element Selectors */
+h1 {
+  font-family: var(--font-sora);
+  font-weight: 600;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+p {
+  font-family: var(--font-inter);
+  font-weight: 400;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+ 
+  /* Optional: Set Inter as the default base font */
+  font-family: var(--font-inter); 
 }
