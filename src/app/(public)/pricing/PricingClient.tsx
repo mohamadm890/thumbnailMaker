@@ -5,10 +5,12 @@ import PricingGrid from "@/components/pricing/PricingGrid";
 import { useUser } from "@clerk/nextjs";
 
 type Plan = {
-  id: string;
-  name?: string;
-  price?: number;
-  [key: string]: any;
+  id: string; // 👈 add this (important for checkout)
+  name: string;
+  price: string;
+  credits: number;
+  benefits: readonly string[]; // 👈 FIX HERE
+  badge: string | null;
 };
 
 type Props = {
