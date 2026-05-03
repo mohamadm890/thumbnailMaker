@@ -31,14 +31,15 @@ export default async function RootLayout({
   
 
   return (
-  
 
     <html lang="en">
             <body className={`${sora.variable} ${inter.variable} bg-[#0B0B0D]`}>
 
         
+   <ClerkProvider>
 
           {children}
+               </ClerkProvider>
       </body>
     </html>
   
