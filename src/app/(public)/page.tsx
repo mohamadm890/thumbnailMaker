@@ -12,14 +12,7 @@ import Footer from "@/components/leading/Footer";
 import MarketingHeader from "@/components/layout/Header/MarketingHeader";
 
 export default async function DashboardPage() {
-  const { isAuthenticated, redirectToSignIn, userId } = await auth();
-  
-
-
-  if (!isAuthenticated) return redirectToSignIn();
-
-  const user = await getUserByClerkId(userId);
-
+ 
 
 
   return (
