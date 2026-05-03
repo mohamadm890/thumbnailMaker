@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function MarketingHeader() {
   return (
-    <header className="w-full   sticky top-0 z-50">
+    <header className="w-full  md:bg-white/80 md:dark:bg-zinc-950/80 md:backdrop-blur sticky top-0 z-50">
       
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
 
