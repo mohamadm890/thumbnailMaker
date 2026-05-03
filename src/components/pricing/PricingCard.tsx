@@ -3,22 +3,19 @@
 type Plan = {
   id: string;
   name: string;
-  is_archived?: boolean;
-  benefits?: string[];
-  prices?: {
-    price_amount: number;
-  }[];
+  price: string; // from PLANS_FULL
+  credits: number;
+  benefits: string[];
+  badge?: string | null;
 };
 
 type Props = {
   plan: Plan;
-  onBuy: (id: string) => void;
+  clerkId: string;
 };
 
-export default function PricingCard({ plan, onBuy }: Props) {
+export default function PricingCard({ plan, clerkId }: Props) {
   const isPopular = plan.name.includes("Creator");
-
-  const price = plan.prices?.[0]?.price_amount ?? 0;
 
   return (
     <div
@@ -35,7 +32,7 @@ export default function PricingCard({ plan, onBuy }: Props) {
 
       {/* PRICE */}
       <p className="text-3xl font-bold mb-4">
-        ${price / 100}
+        ${plan.price}
         <span className="text-sm text-gray-400">
           {" "} / one-time payment
         </span>
@@ -43,27 +40,43 @@ export default function PricingCard({ plan, onBuy }: Props) {
 
       {/* FEATURES */}
       <ul className="text-sm space-y-2 mb-6">
-        {(plan.benefits ?? []).map((b, i) => (
+        {plan.benefits.map((b, i) => (
           <li key={i}>✔ {b}</li>
         ))}
       </ul>
 
-      {/* CTA */}
+      {/* PAYPAL BUTTON */}
       <button
-        onClick={() => onBuy(plan.id)}
+        onClick={async () => {
+          // call backend to start PayPal order
+          const res = await fetch("/api/paypal/create-order", {
+            method: "POST",
+            body: JSON.stringify({
+              planId: plan.id,
+              clerkId,
+            }),
+          });
+
+          const data = await res.json();
+
+          // redirect user to PayPal approval link
+          if (data.approvalUrl) {
+            window.location.href = data.approvalUrl;
+          }
+        }}
         className={`w-full py-2 rounded-lg font-medium ${
           isPopular
             ? "bg-blue-500 hover:bg-blue-600"
             : "bg-gray-700 hover:bg-gray-600"
         }`}
       >
-        Get Started
+        Buy {plan.credits} Credits
       </button>
 
-      {/* POPULAR TAG */}
-      {isPopular && (
+      {/* BADGE */}
+      {plan.badge && (
         <div className="mt-3 text-xs text-blue-400 text-center">
-          Most Popular
+          {plan.badge}
         </div>
       )}
     </div>
