@@ -93,6 +93,9 @@ export default function Footer() {
             <Link className="text-[#A6AAB3] hover:text-white transition" href="/terms">
               Terms
             </Link>
+            <Link className="text-[#A6AAB3] hover:text-white transition" href="/refund">
+            Refund
+           </Link>
           </div>
 
         </div>
