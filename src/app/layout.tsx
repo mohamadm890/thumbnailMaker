@@ -31,11 +31,7 @@ export default async function RootLayout({
   
 
   return (
-    <ClerkProvider
-     signInUrl="/auth/sign-in"
-    signUpUrl="/auth/sign-up"
-    
-    >
+  
 
     <html lang="en">
             <body className={`${sora.variable} ${inter.variable} bg-[#0B0B0D]`}>
@@ -45,7 +41,7 @@ export default async function RootLayout({
           {children}
       </body>
     </html>
-    </ClerkProvider>
+  
 
   );
 }
