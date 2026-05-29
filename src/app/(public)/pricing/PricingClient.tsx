@@ -168,4 +168,3 @@ export default function PricingClient({ plans }: Props) {
     </div>
   );
 }
-}
