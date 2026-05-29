@@ -52,7 +52,7 @@ const paddleInstance = await initializePaddle({
   checkout: {
     settings: {
       theme: "dark",
-      successUrl: `${process.env.API_URL}/generate`,
+      successUrl: `${process.env.NEXT_PUBLIC_API_URL}/generate`,
     },
   },
 });
