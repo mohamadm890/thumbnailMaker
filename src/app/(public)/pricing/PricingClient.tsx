@@ -41,7 +41,7 @@ export default function PricingClient({ plans }: Props) {
       setLoadingPayment(true);
 
       try {
-        const token = process.env.PADDLE_CLIENT_KEY;
+        const token = process.env.NEXT_PUBLIC_PADDLE_CLIENT_KEY;
 
 if (!token) {
   throw new Error("Missing PADDLE_CLIENT_KEY in env");
