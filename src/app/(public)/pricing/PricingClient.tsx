@@ -41,16 +41,22 @@ export default function PricingClient({ plans }: Props) {
       setLoadingPayment(true);
 
       try {
-        // 1. Init Paddle
-     const paddleInstance: Paddle | undefined = await initializePaddle({
-  token: process.env.PADDLE_CLIENT_KEY, 
+        const token = process.env.PADDLE_CLIENT_KEY;
+
+if (!token) {
+  throw new Error("Missing PADDLE_CLIENT_KEY in env");
+}
+
+const paddleInstance = await initializePaddle({
+  token,
   checkout: {
     settings: {
       theme: "dark",
-      successUrl: `${process.env.API_URL}/generate`
-    }
-  }
+      successUrl: "https://your-site.com/success",
+    },
+  },
 });
+   
 
         setPaddle(paddleInstance ?? null);
 
