@@ -1,6 +1,6 @@
 // app/api/paddle/webhook/route.ts
 
-import { createTransaction, getUserByClerkId,getAllUsers, incrementCredits } from "@/server/credits/credits.repository";
+import { createTransaction, getUserByClerkId, incrementCredits } from "@/server/credits/credits.repository";
 import { NextResponse } from "next/server";
 
 
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
     const transactionId = body.data.id;
   
     const lineItems = body.data.details.line_items;
-    const getAllusers = await getAllUsers();
+  
 
    
 
