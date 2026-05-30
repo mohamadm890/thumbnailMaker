@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
  verification: {
-    google: "X0DBbTpTcFcgEZmQSRO34mnrac1ebhbcIysqM8PKNgA",
+    google: "X0DBbTpTcFcgEZmQSRO34mnrac1ebhbcIysqM8P",
   },
   openGraph: {
     title: "VizThumb – AI YouTube Thumbnail Generator",
