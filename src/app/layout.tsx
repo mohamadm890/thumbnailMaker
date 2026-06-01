@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   robots: "index, follow",
   alternates: {
-    canonical: "/",
+    canonical: "https://vizthumb.com",
   },
  verification: {
     google: "X0DBbTpTcFcgEZmQSRO34mnrac1ebhbcIysqM8P",
