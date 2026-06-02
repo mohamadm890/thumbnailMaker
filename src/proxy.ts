@@ -7,7 +7,10 @@ const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)', '/pric
 
 export default clerkMiddleware(async (auth, req) => {
   console.log("Is Public Route?", isPublicRoute(req), "Path:", req.nextUrl.pathname);
-  
+  const path = req.nextUrl.pathname;
+
+  if (path === "/") return;
+
   if (!isPublicRoute(req)) {
     await auth.protect()
   }
