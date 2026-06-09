@@ -1,5 +1,11 @@
 import { colors } from "@/components/design-system/colors";
 
+export const metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 export default function TermsPage() {
   return (
     <div
