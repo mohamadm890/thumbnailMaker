@@ -14,7 +14,6 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  // 🎯 Target Keywords: "best ai to create youtube thumbnails", "create youtube thumbnails with ai"
   title: "VizThumb | Best AI to Create YouTube Thumbnails with High CTR",
   
   description: "Stop wasting hours on design. Use the best AI to create click-worthy YouTube thumbnails in 30 seconds straight from your video script. No Photoshop skills required.",
