@@ -14,42 +14,27 @@ import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
-  title: "VizThumb - Turn Video Scripts into High-CTR Thumbnails",
-  description: "Stop wasting hours on thumbnails that get ignored. Turn your video script into a high-CTR masterpiece in 30 seconds. No Photoshop skills required.",
+  // 🎯 Target Keywords: "best ai to create youtube thumbnails", "create youtube thumbnails with ai"
+  title: "VizThumb | Best AI to Create YouTube Thumbnails with High CTR",
   
-  keywords: [
-    "create thumbnails ai",
-    "create youtube thumbnails with ai",
-    "best ai to create youtube thumbnails",
-    "use ai to create youtube thumbnails",
-    "best ai tools to create thumbnails",
-    "ai app to create youtube thumbnails",
-    "how to create thumbnails using ai",
-    "create click worthy youtube thumbnails in seconds with ai",
-    "create viral youtube thumbnails with ai",
-    "ai to create thumbnails free",
-    "create thumbnail from video ai",
-    "create thumbnail from image ai",
-    "generate ai thumbnails for youtube",
-    "make ai thumbnails for youtube",
-    "free ai thumbnail image generator"
-  ],
-
+  description: "Stop wasting hours on design. Use the best AI to create click-worthy YouTube thumbnails in 30 seconds straight from your video script. No Photoshop skills required.",
+  
   alternates: {
     canonical: "https://vizthumb.com", 
   },
 
   openGraph: {
-    title: "VizThumb - Turn Video Scripts into High-CTR Thumbnails",
-    description: "Stop wasting hours on thumbnails that get ignored. Turn your video script into a high-CTR masterpiece in 30 seconds. No Photoshop skills required.",
+    title: "VizThumb | Best AI to Create YouTube Thumbnails with High CTR",
+    description: "Stop wasting hours on design. Use the best AI to create click-worthy YouTube thumbnails in 30 seconds straight from your video script. No Photoshop skills required.",
     type: "website",
     url: "https://vizthumb.com", 
     siteName: "VizThumb",
   },
+  
   twitter: {
     card: "summary_large_image",
-    title: "VizThumb - Turn Video Scripts into High-CTR Thumbnails",
-    description: "Stop wasting hours on thumbnails that get ignored. Turn your video script into a high-CTR masterpiece in 30 seconds. No Photoshop skills required.",
+    title: "VizThumb | Best AI to Create YouTube Thumbnails with High CTR",
+    description: "Stop wasting hours on design. Use the best AI to create click-worthy YouTube thumbnails in 30 seconds straight from your video script. No Photoshop skills required.",
   },
 };
 
