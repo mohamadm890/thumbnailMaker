@@ -6,7 +6,6 @@ const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)', '/pric
   '/terms', '/contact', '/about', '/', '/refund'])
 
 export default clerkMiddleware(async (auth, req) => {
-  console.log("Is Public Route?", isPublicRoute(req), "Path:", req.nextUrl.pathname);
   const path = req.nextUrl.pathname;
 
   if (path === "/") return;
