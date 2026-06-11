@@ -14,19 +14,12 @@ const isPublicRoute = createRouteMatcher([
   "/api/products(.*)",
 ]);
 
-export default clerkMiddleware(async (auth, req) => {
-  const { userId } = await auth();
-
-  const isPublic = isPublicRoute(req);
-
-  // Only protect private pages
-  if (!isPublic && !userId) {
-    await auth.protect();
+export default clerkMiddleware((auth, req) => {
+  if (!isPublicRoute(req)) {
+    auth().protect();
   }
 });
 
 export const config = {
-  matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)",
-  ],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\..*).*)"],
 };
